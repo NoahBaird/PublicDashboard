@@ -55,3 +55,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+*/Hiddens.pyc
+*/Hiddens.py
