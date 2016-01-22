@@ -1,14 +1,25 @@
-from ExcelDateToObject import convertDateTime
+﻿from ExcelDateToObject import convertDateTime
+from ExcelDataTypeChecks import isExcelDateType
+from ExcelDataTypeChecks import isExcelNumberType
 
-def GetDataRange(startRow, startCol, endRow, endCol):
+def GetDataRange(book, sheet, pointsPerEntry, startRow, startCol):
     values = []
-    for row in range(startRow, endRow):
-        rowValues = []
-        for column in range(startCol, endCol):
-            cell = sheet.cell(row, column)
-            if cell.ctype == 3:
-                rowValues.append(convertDateTime(cell.value))
-            else:
-                rowValues.append(cell.value)
-        values.append(rowValues)
+    for row in range(startRow, sheet.nrows):
+        if (pointsPerEntry != 1):
+            rowValues = []
+            for column in range(startCol, startCol + pointsPerEntry):
+                cell = sheet.cell(row, column)
+                rowValues.append(FormatCellValue(cell, book))
+            values.append(rowValues)
+        else:
+            cell = sheet.cell(row, startCol)
+            values.append(FormatCellValue(cell, book))
     return values
+
+def FormatCellValue(cell, book):
+    if isExcelDateType(cell):
+        return convertDateTime(cell.value, book)
+    elif (isExcelNumberType(cell)):
+        return '{0:n}'.format(cell.value)
+    else:
+        return cell.value

@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>732e51e2-f973-45d2-830b-bbcd46c1a565</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Data Retrieval\DropBoxRetrieval.py</StartupFile>
+    <StartupFile>Factories Tests\AllTests.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,17 +31,47 @@
     <Compile Include="Data Retrieval\Email.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Factories Tests\AllTests.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Factories Tests\Bar Graph Tests\BarGraphClassTests.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Factories Tests\Bar Graph Tests\BarGraphFactorryTests.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Factories Tests\General Helper Functions Tests\SetFormatFlagTests.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Factories\Bar Graph\BarGraphClass.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Factories\Bar Graph\BarGraphFactory.py" />
+    <Compile Include="Factories\General Helper Functions\AxisInformationClass.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Factories\General Helper Functions\ExtendedCellClass.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Factories\General Helper Functions\ExcelDataTypeChecks.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Factories\General Helper Functions\ExcelDateToObject.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Factories\General Helper Functions\FormatClass.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Factories\General Helper Functions\GetDataRange.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Factories\General Helper Functions\KeyFieldValueSearch.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Factories\General Helper Functions\PublicVariables.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Factories\General Helper Functions\SetFormatFlag.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Hiddens.py">
@@ -52,10 +82,16 @@
     <InterpreterReference Include="{2af0f10d-7135-4994-9156-5d01c9c11b7e}\2.7" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Factories Tests\Bar Graph Tests\" />
+    <Folder Include="Factories Tests\General Helper Functions Tests\" />
     <Folder Include="Factories\" />
     <Folder Include="Data Retrieval\" />
     <Folder Include="Factories\Bar Graph\" />
     <Folder Include="Factories\General Helper Functions\" />
+    <Folder Include="Factories Tests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Factories Tests\Bar Graph Tests\Bar_Graph_Example.xlsx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
